@@ -3,11 +3,17 @@ import { Input } from 'react-daisyui';
 import { useForm } from 'react-hook-form';
 
 export default function SignUpPage() {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   const submitForm = useCallback((data: unknown) => {
     console.log('form is valid', data);
   }, []);
+
+  console.log('SignUpPage running render function', errors);
 
   return (
     <form
@@ -25,8 +31,17 @@ export default function SignUpPage() {
         <label htmlFor="email" className="label">
           <span className="label-text">email</span>
         </label>
-        <Input color="ghost" id="email" type="text" {...register('email')} />
-        <span className="label-text text-error">An error</span>
+        <Input
+          color="ghost"
+          id="email"
+          type="text"
+          {...register('email', { required: 'Email is required' })}
+        />
+        {errors.email?.message ? (
+          <span className="label-text text-error">
+            {errors.email.message as string}
+          </span>
+        ) : null}
       </div>
       <button>Submit</button>
     </form>
