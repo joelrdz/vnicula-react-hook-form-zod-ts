@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 import { Input } from 'react-daisyui';
 import { useForm } from 'react-hook-form';
+import { TextField } from '../src/components/TextField';
 
 export default function SignUpPage() {
   const {
@@ -43,6 +44,7 @@ export default function SignUpPage() {
           </span>
         ) : null}
       </div>
+      <TextField />
       <button>Submit</button>
     </form>
   );
