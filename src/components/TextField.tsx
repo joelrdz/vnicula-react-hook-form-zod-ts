@@ -3,7 +3,7 @@ import { Input } from 'react-daisyui';
 interface TextFieldProps {
   id: string;
   label: string;
-  type?: string;
+  type?: 'text' | 'number' | 'email' | 'password';
   inputProps?: unknown;
   error?: string;
 }
