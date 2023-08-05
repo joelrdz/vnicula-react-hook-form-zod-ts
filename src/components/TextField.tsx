@@ -1,15 +1,21 @@
 import { Input } from 'react-daisyui';
 
-export const TextField = () => {
+interface TextFieldProps {
+  id: string;
+  label: string;
+  type?: string;
+}
+
+export const TextField = (props: TextFieldProps) => {
   return (
     <div className="form-control w-full max-w-xs">
-      <label htmlFor="password" className="label">
-        <span className="label-text">password</span>
+      <label htmlFor={props.id} className="label">
+        <span className="label-text">{props.label}</span>
       </label>
       <Input
         color="ghost"
-        id="password"
-        type="password"
+        id={props.id}
+        type={props.type ?? 'text'}
         // {...register('password', { required: 'Password is required' })}
       />
       {/* {errors.password?.message ? (
