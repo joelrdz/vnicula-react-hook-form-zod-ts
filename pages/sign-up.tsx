@@ -32,6 +32,7 @@ export default function SignUpPage() {
         label="email"
         type="email"
         inputProps={register('email', { required: 'Email is required' })}
+        error={errors.email?.message as string}
       />
       <button>Submit</button>
     </form>

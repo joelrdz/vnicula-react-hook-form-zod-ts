@@ -5,6 +5,7 @@ interface TextFieldProps {
   label: string;
   type?: string;
   inputProps?: unknown;
+  error?: string;
 }
 
 export const TextField = (props: TextFieldProps) => {
@@ -19,11 +20,9 @@ export const TextField = (props: TextFieldProps) => {
         type={props.type ?? 'text'}
         {...(props.inputProps ?? {})}
       />
-      {/* {errors.password?.message ? (
-        <span className="label-text text-error">
-          {errors.password.message as string}
-        </span>
-      ) : null} */}
+      {props.error ? (
+        <span className="label-text text-error">{props.error}</span>
+      ) : null}
     </div>
   );
 };
