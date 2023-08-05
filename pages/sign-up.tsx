@@ -27,7 +27,12 @@ export default function SignUpPage() {
       }}
       onSubmit={handleSubmit(submitForm)}
     >
-      <TextField id="email" label="email" type="email" />
+      <TextField
+        id="email"
+        label="email"
+        type="email"
+        inputProps={register('email', { required: 'Email is required' })}
+      />
       <button>Submit</button>
     </form>
   );

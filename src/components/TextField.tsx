@@ -4,6 +4,7 @@ interface TextFieldProps {
   id: string;
   label: string;
   type?: string;
+  inputProps?: unknown;
 }
 
 export const TextField = (props: TextFieldProps) => {
@@ -16,7 +17,7 @@ export const TextField = (props: TextFieldProps) => {
         color="ghost"
         id={props.id}
         type={props.type ?? 'text'}
-        // {...register('password', { required: 'Password is required' })}
+        {...(props.inputProps ?? {})}
       />
       {/* {errors.password?.message ? (
         <span className="label-text text-error">
