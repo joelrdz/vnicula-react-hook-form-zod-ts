@@ -1,6 +1,7 @@
 {
-  "extends": ["next/core-web-vitals",
-    "plugin:react-hooks/recommended",
+  "extends": [
+    "next/core-web-vitals", 
+    "plugin:react-hooks/recommended", 
     // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y
     "plugin:jsx-a11y/recommended",
     "plugin:prettier/recommended"
